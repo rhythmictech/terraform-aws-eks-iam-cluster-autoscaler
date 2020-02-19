@@ -29,7 +29,6 @@ module "cluster_autoscaler" {
 
 | Name | Description |
 |------|-------------|
-| iam\_role\_external\_dns\_arn |  |
-| service\_account |  |
+| aws\_account\_id |  |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
