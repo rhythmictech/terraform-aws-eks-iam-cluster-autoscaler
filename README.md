@@ -1,7 +1,7 @@
 # terraform-aws-eks-iam-cluster-autoscaler
 [![](https://github.com/rhythmictech/terraform-aws-eks-iam-cluster-autoscaler/workflows/check/badge.svg)](https://github.com/rhythmictech/terraform-aws-eks-iam-cluster-autoscaler/actions)
 
-Configure IAM role and related policies to use EKS Service Accounts with the external-dns service.
+Configure IAM role and related policies to use the EKS cluster autoscaler
 
 ## Usage
 ```
@@ -22,13 +22,14 @@ module "cluster_autoscaler" {
 |------|-------------|:----:|:-----:|:-----:|
 | cluster\_name |  | string | n/a | yes |
 | issuer\_url | OIDC issuer URL \(include prefix\) | string | n/a | yes |
-| kubernetes\_namespace | Namespace to operate in \(service accounts and pods must be in the same namespace\) | string | `"default"` | no |
-| service\_account | Name of service account to create \(computed based on cluster name if not specified\) | string | `""` | no |
+| kubernetes\_namespace | Namespace to operate in \(service accounts and pods must be in the same namespace\) | string | `"kube-system"` | no |
+| service\_account | Name of service account to create | string | `""` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| aws\_account\_id |  |
+| iam\_role\_cluster\_autoscaler\_arn |  |
+| iam\_role\_cluster\_autoscaler\_name |  |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
