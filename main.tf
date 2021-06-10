@@ -79,6 +79,7 @@ resource "aws_iam_role" "cluster_autoscaler" {
   name               = "eks-${var.cluster_name}-cluster-autoscaler"
   assume_role_policy = data.aws_iam_policy_document.oidc_assume.json
   path               = "/"
+  tags               = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "cluster_autoscaler" {
