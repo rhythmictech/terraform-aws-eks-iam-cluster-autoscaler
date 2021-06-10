@@ -1,5 +1,6 @@
 variable "cluster_name" {
-  type = string
+  description = "Name of EKS cluster (must match)"
+  type        = string
 }
 
 variable "issuer_url" {
@@ -17,4 +18,10 @@ variable "service_account" {
   default     = ""
   description = "Name of service account to create"
   type        = string
+}
+
+variable "tags" {
+  default     = {}
+  description = "Tags to add to supported resources"
+  type        = map(string)
 }
